@@ -11,12 +11,21 @@ import { RootComponent } from '../main/main.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { ImageTableComponent } from './image-table/image-table.component';
 import { ImageDisplayComponent } from './image-display/image-display.component';
+import { penList } from './Pens';
+import { imageList } from './Image';
+import { ProductAlertComponent } from './product-alert/product-alert.component';
+
+const routes = [
+  { path: '', component: ProductListComponent },
+  { path: 'pens', component: ImageTableComponent, data: penList },
+  { path: 'images', component: ImageTableComponent, data: imageList },
+];
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{ path: '', component: ProductListComponent }]),
+    RouterModule.forRoot(routes),
     MainModule,
   ],
   declarations: [
@@ -26,11 +35,11 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
     MenuBarComponent,
     ImageTableComponent,
     ImageDisplayComponent,
+    ProductAlertComponent,
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
