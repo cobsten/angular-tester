@@ -1,0 +1,17 @@
+[
+  {
+    "review_text": "",
+    "score": 5.0,
+    "id": 1
+  },
+  {
+    "review_text": "Not the best",
+    "score": 1.0,
+    "id": 2
+  },
+  {
+    "review_text": "I suppose its fine",
+    "score": 2.0,
+    "id": 2
+  }
+]

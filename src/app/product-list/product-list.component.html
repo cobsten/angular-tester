@@ -1,5 +1,17 @@
 <h2>Products</h2>
-
+<a class="btn btn-primary" [routerLink]="['/books']"> Find books </a>
+<br />
+<div *ngFor="let product of products">
+  {{ 'id: ' + product.id }}
+  <br />
+  {{ 'title: ' + product.name }}
+  <a type="button" class="btn" (click)="goToDetail(product)">Get Details</a>
+</div>
+<h2>Reviews</h2>
+<a type="button" class="btn" (click)="retrieveReviews()">Retrieve Reviews</a>
+<div *ngFor="let review of reviews">
+  {{ review | json }}
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

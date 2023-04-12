@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -14,11 +15,19 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
 import { penList } from './Pens';
 import { imageList } from './Image';
 import { ProductAlertComponent } from './product-alert/product-alert.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ReviewService } from './review.service';
 
 const routes = [
   { path: '', component: ProductListComponent },
   { path: 'pens', component: ImageTableComponent, data: penList },
   { path: 'images', component: ImageTableComponent, data: imageList },
+  { path: 'books', component: ProductListComponent },
+  {
+    path: 'books/:id',
+    component: ProductDetailsComponent,
+    data: { title: 'Component One' },
+  },
 ];
 
 @NgModule({
@@ -27,6 +36,7 @@ const routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     MainModule,
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
@@ -36,8 +46,10 @@ const routes = [
     ImageTableComponent,
     ImageDisplayComponent,
     ProductAlertComponent,
+    ProductDetailsComponent,
   ],
   bootstrap: [AppComponent],
+  providers: [ReviewService],
 })
 export class AppModule {}
 /*
