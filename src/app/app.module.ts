@@ -17,6 +17,7 @@ import { imageList } from './Image';
 import { ProductAlertComponent } from './product-alert/product-alert.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ReviewService } from './review.service';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 const routes = [
   { path: '', component: ProductListComponent },
@@ -28,6 +29,7 @@ const routes = [
     component: ProductDetailsComponent,
     data: { title: 'Component One' },
   },
+  { path: 'comments', component: CommentFormComponent },
 ];
 
 @NgModule({
@@ -47,6 +49,7 @@ const routes = [
     ImageDisplayComponent,
     ProductAlertComponent,
     ProductDetailsComponent,
+    CommentFormComponent,
   ],
   bootstrap: [AppComponent],
   providers: [ReviewService],

@@ -1,0 +1,27 @@
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+  <h2>Comment Form</h2>
+  <label>
+    Book Name:
+    <input class="mdc-form-field" type="text" formControlName="bookName" />
+    <div
+      *ngIf="
+        commentForm.controls['bookName'].invalid &&
+        (commentForm.controls['bookName'].dirty ||
+          commentForm.controls['bookName'].touched)
+      "
+    >
+      <div *ngIf="commentForm.controls['bookName'].errors?.['required']">
+        Name is required.
+      </div>
+    </div>
+  </label>
+  <label>
+    Your Name:
+    <input type="text" formControlName="readerName" />
+  </label>
+  <label>
+    Comments:
+    <textarea rows="4" cols="50" formControlName="comments"></textarea>
+  </label>
+  <button type="submit" [disabled]="commentForm.invalid">Submit</button>
+</form>
