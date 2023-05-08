@@ -18,6 +18,8 @@ import { ProductAlertComponent } from './product-alert/product-alert.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ReviewService } from './review.service';
 import { CommentFormComponent } from './comment-form/comment-form.component';
+import { ReviewTableComponent } from './review-table/review-table.component';
+import { CommentTableComponent } from './comment-table/comment-table.component';
 
 const routes = [
   { path: '', component: ProductListComponent },
@@ -50,6 +52,8 @@ const routes = [
     ProductAlertComponent,
     ProductDetailsComponent,
     CommentFormComponent,
+    ReviewTableComponent,
+    CommentTableComponent,
   ],
   bootstrap: [AppComponent],
   providers: [ReviewService],

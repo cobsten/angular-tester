@@ -8,10 +8,7 @@
   <a type="button" class="btn" (click)="goToDetail(product)">Get Details</a>
 </div>
 <h2>Reviews</h2>
-<a type="button" class="btn" (click)="retrieveReviews()">Retrieve Reviews</a>
-<div *ngFor="let review of reviews">
-  {{ review | json }}
-</div>
+<app-comment-table></app-comment-table>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

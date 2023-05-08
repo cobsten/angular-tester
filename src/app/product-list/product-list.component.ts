@@ -13,12 +13,11 @@ import { Review } from '../reviews';
 export class ProductListComponent {
   products: Product[] = [];
   path: String | null;
-  reviews!: Review[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private reviewService: ReviewService
+
   ) {
     this.path = activatedRoute.snapshot.url
       .map((segment) => segment.path)
@@ -36,11 +35,6 @@ export class ProductListComponent {
     }
   }
 
-  retrieveReviews() {
-    this.reviewService.getData().subscribe((data) => {
-      this.reviews = data;
-    });
-  }
   goToDetail(product: Product) {
     const data = { item: product };
     this.router.navigate(['/' + this.path, product.id], { state: data });
